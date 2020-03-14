@@ -1,24 +1,35 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <math.h>
 using namespace std;
 
-
 int main(){
-    int n;
-    cout<<"Enter n: ";
-    cin>>n;
     ofstream file;
-    file.open("c:\\Qt\\Projects\\1\\example.txt");
-    for (int i=1;i<=n;i++) {
-        for (int j=1;j<=i;j++) {
-            cout<<0;
-            file <<"0";
-        }
-        cout<<endl;
-        file <<endl;
-        }
+    file.open("c:\\Qt\\Projects\\1\\example2.txt");
+    double shag,npredel,vpredel;
+    cout<<"Enter (npredel and vpredel): ";
+    cin>>npredel>>vpredel;
+    cout<<"Enter shag: ";
+    cin>>shag;
+    cout<<"\tx\t\ty"<<endl;
+    cout.precision(5);
+
+    for (double x=npredel;x<=vpredel;x+=shag) {
+        double y=pow((2+x),2)+3*x;
+        cout<<"\t"<<x<<"\t\t"<<y<<endl;
+        file<<"\tx\t\ty"<<endl;
+        file<<"\t"<<x<<"\t\t"<<y<<endl;
+    }
     file.close();
-    getchar();
-    getchar();
+
     return 0;
 }
+
+
+
+
+
+
+
+
