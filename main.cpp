@@ -3,37 +3,30 @@
 #include <iomanip>
 #include <math.h>
 using namespace std;
+int fact (int ch);
 
 int main(){
     ofstream file;
     file.open("c:\\Qt\\Projects\\1\\example4.txt");
-    int ch;
-    double x;
-    int chislitel=1;
-    cout<<"Enter Ch: ";
-    cin>>ch;
-    cout<<"Enter x: ";
-    cin>>x;
-    int znamenatel=7;//znamenatel - chislo vozle x
-    double l=(chislitel/(znamenatel*x))*(-1);
-    while(znamenatel<ch){
-         chislitel++;
-         znamenatel++;
-         if(chislitel%2==0){
-           l=l+(chislitel/(znamenatel*x));
-         }
-         else{
-             l=l+(chislitel/(znamenatel*x))*(-1);
-         }
-
-     }
-    cout<<l<<endl;
-    file<<l;
-    file.close();
+     cout<<"Enter x: "<<endl;
+     double x;
+     cin>>x;
+     double y=1-(pow(x,2)/fact(2))+(pow(x,4)/fact(4));
+     cout<<y<<endl;
+     file<<y;
+     file.close();
 
     return 0;
 }
+int fact(int ch){
 
+    if(ch < 0)
+            return 0;
+        if (ch == 0)
+            return 1;
+        else
+            return ch * fact(ch - 1);
+}
 
 
 
