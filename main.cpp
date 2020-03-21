@@ -7,17 +7,27 @@ using namespace std;
 int main(){
     ofstream file;
     file.open("c:\\Qt\\Projects\\1\\example4.txt");
-   double d,stsharov;
-   int kolvosharov;
-   cout<<"Vvedite vnutrennii diametr vnutrennego shara(sm),  tolsh'inu stenok sharov(mm), kolichestvo sharov: "<<endl;
-   cin>>d>>stsharov>>kolvosharov;
-   double V=(4/3*3.14*pow((d+kolvosharov*stsharov/10),3))/1000;
-   cout<<V;
-   file<<V;
+    int ch;
+    double x=2;
+    int chislitel=1;
+    cout<<"Enter Ch: ";
+    cin>>ch;
+    int znamenatel=7;//znamenatel - chislo vozle x
+    double l=(chislitel/(znamenatel*x))*(-1);
+    while(znamenatel<ch){
+         chislitel++;
+         znamenatel++;
+         if(chislitel%2==0){
+           l=l+(chislitel/(znamenatel*x));
+         }
+         else{
+             l=l+(chislitel/(znamenatel*x))*(-1);
+         }
 
-
-
-   file.close();
+     }
+    cout<<l<<endl;
+    file<<l;
+    file.close();
 
     return 0;
 }
