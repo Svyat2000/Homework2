@@ -8,10 +8,12 @@ int main(){
     ofstream file;
     file.open("c:\\Qt\\Projects\\1\\example4.txt");
     int ch;
-    double x=2;
+    double x;
     int chislitel=1;
     cout<<"Enter Ch: ";
     cin>>ch;
+    cout<<"Enter x: ";
+    cin>>x;
     int znamenatel=7;//znamenatel - chislo vozle x
     double l=(chislitel/(znamenatel*x))*(-1);
     while(znamenatel<ch){
