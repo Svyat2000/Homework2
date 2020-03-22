@@ -25,7 +25,7 @@ int main(){
              }
          }
     cout<<sum<<endl;
-    file<<y;
+    file<<sum;
     file.close();
 
     return 0;
